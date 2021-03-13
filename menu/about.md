@@ -1,6 +1,8 @@
 ---
 layout: page
-title: Welcome to Lagrange!
+title: Hello there!
 ---
 
-Update the `menu/about.md` file to change your About page.
+I am Daniel Biro from Budapest, Hungary and this my little site to share some geeky fun stuff I am spending my time with ocasionally.
+
+Enjoy!
