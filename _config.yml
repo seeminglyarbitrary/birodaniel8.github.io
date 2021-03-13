@@ -20,10 +20,13 @@ permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'Your Site Name'
+title:		           'Blog123'
 description:	       'with a cool subheading'
 author:              'You!'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
 #  path: rss-feed.xml
+
+# github:
+#   - url: "https://birodaniel8.github.io/test_again/"
