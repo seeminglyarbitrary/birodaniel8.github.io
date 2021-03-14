@@ -3,7 +3,7 @@ layout: post
 title: "How to setup a blog on GitHub Pages"
 author: "Daniel Biro"
 categories: jekyll
-tags: [github, jekyll, blog, ruby, into, setup]
+tags: [github, jekyll, blog, ruby, intro, setup, piday]
 image: 2021-03-14-github-page.png
 toc: ture
 ---

@@ -21,7 +21,7 @@ body {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
   font-size: 18px;
   color: #515151;
-  line-height: 1.75rem;
+  line-height: 1.7rem;
 }
 
 @media (max-width: 30em) {
@@ -143,6 +143,10 @@ hr {
   text-align: justify;
 }
 
+.post-title {
+  text-align: left;
+}
+
 .posts {
   margin-bottom: 5rem;
   padding: 0px;
@@ -169,7 +173,7 @@ hr {
 }
 
 .related-posts {
-  padding-left: 0px;
+  padding-left: 5px;
   list-style: none;
 }
 

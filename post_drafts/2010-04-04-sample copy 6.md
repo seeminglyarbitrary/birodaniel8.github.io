@@ -3,7 +3,7 @@ layout: post
 title: "Maximum Likelihood estimation for time series models"
 author: "You!"
 categories: journal
-tags: [documentation,sample]
+tags: [documentation,sample,blog]
 image: mountains_trim.jpg
 date: 2021-03-13 15:34:09 +0100
 ---

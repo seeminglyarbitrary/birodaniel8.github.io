@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Maximum Likelihood estimation for time series models"
+title: "Random Post name"
 author: "You!"
 categories: journal
 tags: [documentation,sample,blog]
 date: 2021-03-13 15:34:09 +0100
-image: template_0.png
+image: template_1.png
 ---
 
 This has to be maximised with respect to $\boldsymbol{\theta}.$
