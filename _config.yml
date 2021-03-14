@@ -21,7 +21,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'SeeminglyArbitrary'
-description:	       'with a cool subheading'
+description:	       'minimal but not meaningless'
 author:              'Daniel Biro'
 
 url: https://seeminglyarbitrary.github.io/
