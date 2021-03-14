@@ -1,5 +1,5 @@
 _site
-Gemfile.lock
+# Gemfile.lock
 *.gem
 .sass-cache
 .jekyll-cache
