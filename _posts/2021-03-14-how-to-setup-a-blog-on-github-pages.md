@@ -5,6 +5,7 @@ author: "Daniel Biro"
 categories: jekyll
 tags: [github, jekyll, blog, ruby, into, setup]
 image: 2021-03-14-github-page.png
+toc: ture
 ---
 
 Let me just start with a quick intro statement. Setting up a proper blog and posting some ideas online has been on my to-do list since a long time and I have finally decided to actually do it now. The purpose of this site is not to share any Earth-shaking ideas but just to document some fun stuff I am playing around.
@@ -37,8 +38,9 @@ Creating a new blog using the default theme is very easy, you just have to follo
 3. Open up a terminal and navigate to the folder which contains the cloned repo.
 4. Run `jekyll new .`, this will create the Jekyll related files that you need to operate your blog.
 5. Run `bundle install` (or `bundle update`) to install the gems in the Gem file.
-6. Run `bundle exec jekyll serve` to serve your blog on your local computer. A link is generated that you can open in a browser to see how your site behave. This is useful to see your edits locally before you publish them online. It can be shuw down by `ctrl+c`. This first version we created is using the built in Minima theme (you can check it in the `_config.yml` file)
+6. Run `bundle exec jekyll serve` to serve your blog on your local computer. A link is generated that you can open in a browser to see how your site behave. This is useful to see your edits locally before you publish them online.<br>
 ![local_serve](/assets/img/2021-03-14-local-serve.png "Local Serve")
+It can be shut down by `ctrl+c`. This first version we created is using the built in Minima theme (you can check it in the `_config.yml` file)
 7. Commit and push your edits to the master branch.
 
 ### Hosting the blog on GitHub Pages
@@ -46,17 +48,17 @@ Creating a new blog using the default theme is very easy, you just have to follo
 Once youe changes are in the GitHub repo, you can host it online:
 1. Go to your repository settings and scrolling down to 'GitHub Pages', you can select the source branch to your GitHub Page.
 2. Select `master` and `/(root)` and save.
-3. After the page is reloaded you can scroll down again and you will find the url where your site is published.
+3. After the page is reloaded you can scroll down again and you will find the url where your site is published:<br>
 ![repo_setting](/assets/img/2021-03-14-repo-setting.png "Repo setting")
 4. Wait a couple of minutes (the page has to be rebuilt at every change and it might takes some time) and check you site up and running.
 5. You might see that your blog doesn't look like as the local version and you get 404 error if you want to read a post. This is due to some settings of the path for the layout and site files. Go back to the editor and in the `_config.yml` file, set the `url` variable to `https://<username>.github.io` with your GitHub username and the `baseurl` to `/repo_name` where the name of the hosting repo should be included. The `_config.yml` file is actually quite well commented to figure out the role of the listed configuration variables (like title, email, twitter_username).
 7. Commit and push your edits to the master branch and after a couple of minutes the online hosted site should look like as the local one.
 
+![new_blog](/assets/img/2021-03-14-my-blog.png "New blog")
+
 ### Create your first blog post
 
 Creating a new blog post is very easy in the Jekyll framework and it can be basically done by creating a new markdown file for each of your posts. If you navigate to the `_posts` folder you can already see an example file. The files should be named as `YYYY-mm-dd-post-name.md`, all separated by `-` (but this info can be overwritten within the file). The markdown file contains some header where you can store the title, auther, date, etc followed by the body your post. The formatting is based on markdown, so let's get familiar with it if you haven't used before, it is extremely easy to pick up.
-
-![new_blog](/assets/img/2021-03-14-my-blog.png "New blog")
 
 ### What else is in the Jekyll created files/folders?
 
@@ -131,3 +133,19 @@ It is a JavaScript based engine which works well in most of the popular browsers
 3. You just need to put your LaTeX type code between `$` signs for inline formulas and `$$` for equations in new lines.
 
 $$ L(\boldsymbol{\theta})=f_{Y_{T},Y_{T-1},...,Y_{1}}(y_{T},y_{T-1},...,y_{1};\boldsymbol{\theta}) $$
+
+### Username.github.io as domain
+
+By default the URL of your GitHub page is accessible via `<username>.github.io/<repo_name>`, however on each account you can select one of the repo pages and use it as your GitHub User Page. The only thing you have to do is to rename the selected repo to `<username>.github.io`: <br>
+![rename_repo](/assets/img/2021-03-14-rename-repo.png "Rename Repo")
+Wait a couple of minutes to rebuild and your user page is up and running.
+
+### Useful resources:
+This post summarizes my experience on setting up a blog-type site on GitHub Pages and I have used mostly the following resources:
+- <a href="https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq">GitHub Pages and Jekyll playlist of Bill Raymond</a>
+- <a href="https://hungryminds.ca/how-to-start-a-blog-or-personal-website-using-jekyll-and-github-pages/">How to Start a Blog or Personal Website Using Jekyll and GitHub Pages</a>
+- <a href="https://www.youtube.com/watch?v=bwThn0rxv7M&list=PLm_Qt4aKpfKijgP0rDH7FSJOlS9IBGbT1">Github Pages and Jekyll Tutorial playlist of WebJeda</a>
+- <a href="https://blog.webjeda.com/create-jekyll-blog/">How to Create a Beautiful Jekyll Blog?</a>
+- <a href="https://github.com/LeNPaul/Lagrange">LeNPaul/Lagrange Jekyll theme</a>
+
+![pi_day](/assets/img/2021-03-14-pi-day.png "Happy Pi Day")
