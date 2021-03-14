@@ -142,10 +142,10 @@ Wait a couple of minutes to rebuild and your user page is up and running.
 
 ### Useful resources:
 This post summarizes my experience on setting up a blog-type site on GitHub Pages and I have used mostly the following resources:
-- <a href="https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq">GitHub Pages and Jekyll playlist of Bill Raymond</a>
-- <a href="https://hungryminds.ca/how-to-start-a-blog-or-personal-website-using-jekyll-and-github-pages/">How to Start a Blog or Personal Website Using Jekyll and GitHub Pages</a>
-- <a href="https://www.youtube.com/watch?v=bwThn0rxv7M&list=PLm_Qt4aKpfKijgP0rDH7FSJOlS9IBGbT1">Github Pages and Jekyll Tutorial playlist of WebJeda</a>
-- <a href="https://blog.webjeda.com/create-jekyll-blog/">How to Create a Beautiful Jekyll Blog?</a>
-- <a href="https://github.com/LeNPaul/Lagrange">LeNPaul/Lagrange Jekyll theme</a>
+- [GitHub Pages and Jekyll playlist of Bill Raymond](https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq)
+- [How to Start a Blog or Personal Website Using Jekyll and GitHub Pages](https://hungryminds.ca/how-to-start-a-blog-or-personal-website-using-jekyll-and-github-pages/)
+- [Github Pages and Jekyll Tutorial playlist of WebJeda](https://www.youtube.com/watch?v=bwThn0rxv7M&list=PLm_Qt4aKpfKijgP0rDH7FSJOlS9IBGbT1)
+- [How to Create a Beautiful Jekyll Blog?](https://blog.webjeda.com/create-jekyll-blog/)
+- [LeNPaul/Lagrange Jekyll theme](https://github.com/LeNPaul/Lagrange)
 
 ![pi_day](/assets/img/2021-03-14-pi-day.png "Happy Pi Day")
