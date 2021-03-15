@@ -5,7 +5,7 @@ author: "Daniel Biro"
 categories: jekyll
 tags: [github, jekyll, blog, ruby, intro, setup, piday]
 image: 2021-03-14-github-page.png
-toc: ture
+toc: true
 ---
 
 Let me just start with a quick intro statement. Setting up a proper blog and posting some ideas online has been on my to-do list for a long time and I have finally decided to actually do it now. The purpose of this site is not to share any Earth-shaking ideas but to document some fun stuff I am playing around with.
