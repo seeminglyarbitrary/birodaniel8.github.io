@@ -4,7 +4,7 @@ title: "How to create your own package in Julia"
 author: "Daniel Biro"
 categories: julia
 tags: [julia, package, github, create]
-image: 2021-03-15-julia-package.png
+image: 2021-03-15-header-julia-package.png
 toc: true
 ---
 
