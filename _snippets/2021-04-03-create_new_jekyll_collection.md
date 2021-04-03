@@ -33,6 +33,9 @@ title: Collection List
 </ul>
 
 {% endhighlight %}
+
+{:start="5"}
+<!-- highlighting breaks the enumerated list so I start it again from 5 -->
 5. Create a new folder `_collection_name` and add new posts to it
 
 **Links**:
