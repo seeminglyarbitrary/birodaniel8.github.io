@@ -19,6 +19,11 @@ highlighter:         rouge
 permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag, jekyll-toc]
 
+# new collection: snippets
+collections:
+  snippets:
+    output: true
+
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'SeeminglyArbitrary'
 description:	       'minimal but not meaningless'
