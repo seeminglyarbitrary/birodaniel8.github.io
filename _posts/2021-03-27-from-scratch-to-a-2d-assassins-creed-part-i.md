@@ -47,11 +47,15 @@ def main():
 
 Inside the loop, we can handle the pygame events. With some simple lines, you can get all the events and loop through them one by one. A good idea is to add a feature that quits our game when the player clicks on the exit button:
 {% highlight python %}
+import sys
 for event in pygame.event.get():
     # quit event:
     if event.type == pygame.QUIT:
         pygame.quit()
+        sys.exit()
 {% endhighlight %}
+
+The exit function from the sys package is also necessary to close the application and not let any other section to run because it would cause an error when you close the game.
 
 ### Images and rectangles
 
