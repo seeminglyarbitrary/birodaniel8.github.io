@@ -3,6 +3,7 @@ layout: snippet
 title: "Create new Jekyll collection"
 author: "Daniel Biro"
 categories: snippet
+date: 2021-04-03
 ---
 
 Creating a new Jekyll collection for "multiple-feeds" (not added to RSS feed):

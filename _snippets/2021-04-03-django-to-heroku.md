@@ -3,6 +3,7 @@ layout: snippet
 title: "Django app deployment to Heroku"
 author: "Daniel Biro"
 categories: snippet
+date: 2021-04-03
 ---
 
 Deploying my Django app to Heroku on Windows (assuming the Django app is already functioning and a virtual environment is created by `pipenv`):

@@ -4,7 +4,8 @@ title: Snippets
 ---
 
 <ul class="posts">
-  {% for post in site.snippets %}
+<!-- for some reason the snippets load in the wrong order so it has to be reversed -->
+  {% for post in site.snippets reversed %}
 
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>
