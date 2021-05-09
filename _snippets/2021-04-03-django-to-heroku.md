@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: "Django app deployment to Heroku"
+title: "Django App deployment to Heroku"
 author: "Daniel Biro"
 categories: snippet
 date: 2021-04-03
@@ -22,10 +22,10 @@ Deploying my Django app to Heroku on Windows (assuming the Django app is already
     6. And all the other packages used in the app
 4. Local tests:
     1. Open up a terminal and activate the venv (I am using the bash terminal in VSCode)
-    2. Run: `waitress-serve --listen=127.0.0.1:8000 <app_name>.wsgi:application`
+    2. Run: `waitress-serve --listen=127.0.0.1:8000 <project_name>.wsgi:application`
     3. Make sure it is functioning
 5. **Procfile**:
-    1. Create file named `Procfile` and paste `web: gunicorn <app_name>.wsgi --log-file -` into it
+    1. Create file named `Procfile` and paste `web: gunicorn <project_name>.wsgi --log-file -` into it
     2. `heroku local` doesn't work with Windows, but this procfile will be used in Heroku remote
     3. Create another file named `Procfile_windows` and paste `web: py manage.py runserver 127.0.0.1:8000` into it
     4. Run: `heroku local -f Procfile_windows`
@@ -47,7 +47,7 @@ Deploying my Django app to Heroku on Windows (assuming the Django app is already
 	2. On the Heroku Dashboard add a new add-on: Heroku PostGres
 	3. On the settings tab you have the `config vars`: reveal config vars
 	4. There is a long string there and we will extract the info from that and att the `NAME`, `HOST`, `PORT`, `USER`, `PASSWORD` keys to the DATABASES/default dictionary in the settings.py file
-    5. The string we have is contructed as:
+    5. The string we have is constructed as:
     `postgres://<USER>:<PASSWORD>@<HOST>:<PORT>/<NAME>`
 	6. Migrate the database (this will of course be an empty one): `python manage.py migrate`
     7. Create a new super user: `python manage.py createsuperuser`
