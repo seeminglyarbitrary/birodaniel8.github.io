@@ -59,7 +59,7 @@ The private Git repository is necessary as some of the configurations with the p
 Alternatively one can push the files directly to Heroku and then there is no need for a GitHub repository. To do this, initialize a git repo in your folder and run `heroku git:remote -a <heroku_app_name>` right after the first commit. After that all the steps are the same except you can skip step (9) and just push to Heroku by `git push heroku master`.
 
 **Links**:
-- [Deploy a Django App to Heroku](https://www.youtube.com/watch?v=GMbVzl_aLxM)
-- [Django Everywhere-Host Your Django App for Free on Heroku](https://studygyaan.com/django/django-everywhere-host-your-django-app-for-free-on-heroku)
-- [Gunicorn doesn't work on Windows'](https://stackoverflow.com/questions/11087682/does-gunicorn-run-on-windows)
-- [Pipfile vs requirements.txt](https://stackoverflow.com/questions/63252388/requirements-txt-vs-pipfile-in-heroku-flask-webapp-deployment)
+- [Deploy a Django App to Heroku](https://www.youtube.com/watch?v=GMbVzl_aLxM){:target="_blank"}
+- [Django Everywhere-Host Your Django App for Free on Heroku](https://studygyaan.com/django/django-everywhere-host-your-django-app-for-free-on-heroku){:target="_blank"}
+- [Gunicorn doesn't work on Windows'](https://stackoverflow.com/questions/11087682/does-gunicorn-run-on-windows){:target="_blank"}
+- [Pipfile vs requirements.txt](https://stackoverflow.com/questions/63252388/requirements-txt-vs-pipfile-in-heroku-flask-webapp-deployment){:target="_blank"}

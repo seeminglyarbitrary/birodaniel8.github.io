@@ -9,7 +9,7 @@ date: 2021-03-27
 toc: true
 ---
 
-I have just recently discovered pygame, an amazingly fun package in Python by watching [this](https://www.youtube.com/watch?v=jO6qQDNa2UY) quick tutorial. In my view, it is a perfect package if you just got into programming to create one of your first little projects, but it is also a lot of fun if you consider yourself a bit more experienced programmer as I do. It is an excellent choice to apply those base programming elements you learned previously to something tangible and also to learn game logic and just genuinely enjoy the game you came up with. I am personally a huge fan of the Assassin's Creed games, although I haven't played with the newer ones, I decided to create my little game with pygame which resembles the AC games but obviously much more basic. The idea is to have a guy that we can control and a target to reach and kill. Between you and your target, there should be a bunch of guards that you have to avoid. And all this in top-view and 2D.
+I have just recently discovered pygame, an amazingly fun package in Python by watching [this](https://www.youtube.com/watch?v=jO6qQDNa2UY){:target="_blank"} quick tutorial. In my view, it is a perfect package if you just got into programming to create one of your first little projects, but it is also a lot of fun if you consider yourself a bit more experienced programmer as I do. It is an excellent choice to apply those base programming elements you learned previously to something tangible and also to learn game logic and just genuinely enjoy the game you came up with. I am personally a huge fan of the Assassin's Creed games, although I haven't played with the newer ones, I decided to create my little game with pygame which resembles the AC games but obviously much more basic. The idea is to have a guy that we can control and a target to reach and kill. Between you and your target, there should be a bunch of guards that you have to avoid. And all this in top-view and 2D.
 
 When I am writing this post I am still far away from the final version of the game, but in this part let's just get into the basics of the package. Pygame is a framework written as a Python package to create simple event-based games. Basically, you have to create a window that will pop up once you run your main file and write functions that will handle the events such as a key being pressed.
 
@@ -118,7 +118,7 @@ for event in pygame.event.get():
     ...
 {% endhighlight %}
 
-These are the basic ideas of pygame that one needs to have to create a more sophisticated game later on. The complete code is available at my git repo here: [main_part_i.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_i.py)
+These are the basic ideas of pygame that one needs to have to create a more sophisticated game later on. The complete code is available at my git repo here: [main_part_i.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_i.py){:target="_blank"}
 
 ### Useful resources:
-- [Pygame in 90 Minutes - For Beginners](https://www.youtube.com/watch?v=jO6qQDNa2UY) 
+- [Pygame in 90 Minutes - For Beginners](https://www.youtube.com/watch?v=jO6qQDNa2UY){:target="_blank"}

@@ -174,4 +174,4 @@ Now if the player runs into the highlighted view range, the game stops and close
 
 This post became quite long but a lot of very important functionality has been added and we are getting very close to have all major steps ready for the final properly playable version. In the next post, I will show how to make the player able to kill the guards with a little fight cloud animation.
 
-The complete code is available at my git repo here: [main_part_iv.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_iv.py)
+The complete code is available at my git repo here: [main_part_iv.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_iv.py){:target="_blank"}

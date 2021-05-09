@@ -7,7 +7,7 @@ date: 2021-05-09
 ---
 
 Deploying my Django & React app to Heroku on Windows:
- - Many steps must be followed from the [Django only deployment](https://seeminglyarbitrary.github.io/snippets/2021-04-03-django-to-heroku.html)
+ - Many steps must be followed from the [Django only deployment](https://seeminglyarbitrary.github.io/snippets/2021-04-03-django-to-heroku.html){:target="_blank"}
  - Some noteable difference:
     - Recently I have decided to keep the pipfile and package.json related files outside the main project folder
     - The main project folder usually contains an app for the backend/api (Django) and another for the frontend (React)
@@ -38,5 +38,5 @@ New steps:
 (Some extra note: `pipenv shell` can create the Python environment from an existing pipfile, `npm i` creates the node_modules folder and its contents)
 
 **Links**:
-- [Deploy your React-Django app on Heroku](https://alphacoder.xyz/deploy-react-django-app-on-heroku/)
-- [How can I modify Procfile to run Gunicorn process in a non-standard folder on Heroku?](https://stackoverflow.com/questions/16416172/how-can-i-modify-procfile-to-run-gunicorn-process-in-a-non-standard-folder-on-he)
+- [Deploy your React-Django app on Heroku](https://alphacoder.xyz/deploy-react-django-app-on-heroku/){:target="_blank"}
+- [How can I modify Procfile to run Gunicorn process in a non-standard folder on Heroku?](https://stackoverflow.com/questions/16416172/how-can-i-modify-procfile-to-run-gunicorn-process-in-a-non-standard-folder-on-he){:target="_blank"}

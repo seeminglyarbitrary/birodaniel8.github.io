@@ -16,18 +16,18 @@ As of today, I will make an attempt to overcome my previous mistakes on wasting 
 
 ### Why GitHub Pages?
 
-There is a huge selection of sites that offers you a nice and easy platform to launch your blog-type site and first I have just looked at the most common ones. I guess many are familiar with WordPress and as it offers a low-cost (=free) version, I gave it a try. But I quickly realized that the free version doesn't give you that much freedom and the themes you can select are barely customizable. The other main problem was the lack of a straightforward way to display math formulas, which is quite important in my case. So I have tried to look-up some other sites and I came across [GitHub Pages](https://pages.github.com/). I have been coding for a while and in my work, I have got familiar with the Git framework and since then I have been sharing my private codes on GitHub as well. I have read good reviews about the GitHub Pages solution and as my experience with GitHub is very positive, I decided to give this one a try too.
+There is a huge selection of sites that offers you a nice and easy platform to launch your blog-type site and first I have just looked at the most common ones. I guess many are familiar with WordPress and as it offers a low-cost (=free) version, I gave it a try. But I quickly realized that the free version doesn't give you that much freedom and the themes you can select are barely customizable. The other main problem was the lack of a straightforward way to display math formulas, which is quite important in my case. So I have tried to look-up some other sites and I came across [GitHub Pages](https://pages.github.com/){:target="_blank"}. I have been coding for a while and in my work, I have got familiar with the Git framework and since then I have been sharing my private codes on GitHub as well. I have read good reviews about the GitHub Pages solution and as my experience with GitHub is very positive, I decided to give this one a try too.
 
 Overall what I can say just after a couple of days of using it is that you need a little bit of confidence working with HTML, markdown, CSS, and using a terminal but if you are familiar with those, you can get a well-customized blog up and running quite quickly, and writing posts in the future is just extremely easy. 
 
-The framework I have been using is [Jekyll](https://jekyllrb.com), which is a simple way to set up a static blog-aware site and it is supported by GitHub Pages. In the following sections, I will provide a step-by-step description of how to set up your blog on GitHub Pages using Jekyll on Windows (however the steps are very similar in other operating systems as well).
+The framework I have been using is [Jekyll](https://jekyllrb.com){:target="_blank"}, which is a simple way to set up a static blog-aware site and it is supported by GitHub Pages. In the following sections, I will provide a step-by-step description of how to set up your blog on GitHub Pages using Jekyll on Windows (however the steps are very similar in other operating systems as well).
 
 ![powered_by_Jekyll_and_GitHub_pages](/assets/img/2021-03-14-jekyll-github.png "Powered by Jekyll and GitHub Pages")
 
 ### What do we need?
 
 - A **GitHub account** and **Git** installed to your local computer: GitHub Pages operates in the Git framework, therefore you will store your files in a repository, and making changes or creating a new post can be done by commits to your repository.
-- **Ruby and Jekyll**: Jekyll is written in Ruby, however, you don't have to be a Ruby developer at all (the first time I encountered Ruby was when I launched this site). You can install Ruby and Jekyll by [RubyInstaller](https://rubyinstaller.org/downloads/). When you install it, make sure you run `ridk install` at the final step. Once it is done, run `gem install jekyll bundler` in a command prompt window and if it has finished you can check which jekyll version has been installed by `jekyll-v`. These steps can be found on Jekyll's official webpage [here](https://jekyllrb.com/docs/installation/windows/).
+- **Ruby and Jekyll**: Jekyll is written in Ruby, however, you don't have to be a Ruby developer at all (the first time I encountered Ruby was when I launched this site). You can install Ruby and Jekyll by [RubyInstaller](https://rubyinstaller.org/downloads/){:target="_blank"}. When you install it, make sure you run `ridk install` at the final step. Once it is done, run `gem install jekyll bundler` in a command prompt window and if it has finished you can check which jekyll version has been installed by `jekyll-v`. These steps can be found on Jekyll's official webpage [here](https://jekyllrb.com/docs/installation/windows/){:target="_blank"}.
 - **Visual Studio Code**: Actually any IDE or text editor does the work, but VSCode is just my own preference.
 
 ### Create a new project using default themes and run it locally
@@ -84,12 +84,12 @@ gem 'jekyll-seo-tag'
 
 ### Working with default themes
 
-In our first example, a built-in theme (Minima) was used to create the layout of the site, but other [supported themes](https://pages.github.com/themes/) can be also used. If there is an update for a given theme it automatically applies to your site. This can be useful, but if you made any changes to the layout, an update will overwrite it and might break your site. You can cut off this dependency by removing the `theme: minima` line from your `_config.yaml` file. But then you also have to add the already existing theme-related layout files to the folder of your project (on Windows the required files for Minima are stored in: `C:\Ruby27-x64\lib\ruby\gems\2.7.0\gems\minima-2.5.1`).
+In our first example, a built-in theme (Minima) was used to create the layout of the site, but other [supported themes](https://pages.github.com/themes/){:target="_blank"} can be also used. If there is an update for a given theme it automatically applies to your site. This can be useful, but if you made any changes to the layout, an update will overwrite it and might break your site. You can cut off this dependency by removing the `theme: minima` line from your `_config.yaml` file. But then you also have to add the already existing theme-related layout files to the folder of your project (on Windows the required files for Minima are stored in: `C:\Ruby27-x64\lib\ruby\gems\2.7.0\gems\minima-2.5.1`).
 
 ### Using Jekyll themes
 
 Although GitHub Pages has its supported themes, Jekyll has a huge library of themes that you can apply and easily set up by the following steps:
-1. Choose a theme you like from a given [library](https://jekyllrb.com/docs/themes/). I am currently using the [Lagrange](https://github.com/LeNPaul/Lagrange) theme.
+1. Choose a theme you like from a given [library](https://jekyllrb.com/docs/themes/){:target="_blank"}. I am currently using the [Lagrange](https://github.com/LeNPaul/Lagrange){:target="_blank"} theme.
 2. Open the theme's GitHub repository
 3. Fork the repository
 4. Rename the repository and set the GitHub Page settings of the repo as discussed before (note that some themes use other branches like 'gh-pages' as default)
@@ -107,13 +107,13 @@ The applied Jekyll theme probably has more files and folders than what the simpl
   {% endif %}   {% endraw %}
 {% endhighlight %}
 
-Jekyll supports the [Liquid](https://shopify.github.io/liquid/) template language which can be useful to include `if-else` or `for-loop` type statements.
+Jekyll supports the [Liquid](https://shopify.github.io/liquid/){:target="_blank"} template language which can be useful to include `if-else` or `for-loop` type statements.
 - **_includes** folder: This folder contains some shorter html files (header, footer, menu) that can be included to pages easily by a simple line eg.: {% raw %}`{% include header.html %}`{% endraw %}
 - **main.css**: Somewhere in your folders a `.css` file is responsible for CSS formatting of your page. You can easily customize it.
 
 ### How to add math formulas?
 
-The straightforward handling and display of math formulas was an important factor for not choosing another platform for my blog. Jekyll offers several ways to incorporate beautifully typed formulas but my choice became the often used [MathJax](https://www.mathjax.org/).
+The straightforward handling and display of math formulas was an important factor for not choosing another platform for my blog. Jekyll offers several ways to incorporate beautifully typed formulas but my choice became the often used [MathJax](https://www.mathjax.org/){:target="_blank"}.
 It is a JavaScript based engine which works well in most of the popular browsers and using it is super simle:
 1. Add a file named `mathjax.html` to the `_includes` folder and paste the following into the file and save it:
 ``` html
@@ -142,10 +142,10 @@ Wait a couple of minutes to rebuild and your user page is up and running.
 
 ### Useful resources:
 This post summarizes my experience on setting up a blog-type site on GitHub Pages and I have used mostly the following resources:
-- [GitHub Pages and Jekyll playlist of Bill Raymond](https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq)
-- [How to Start a Blog or Personal Website Using Jekyll and GitHub Pages](https://hungryminds.ca/how-to-start-a-blog-or-personal-website-using-jekyll-and-github-pages/)
-- [Github Pages and Jekyll Tutorial playlist of WebJeda](https://www.youtube.com/watch?v=bwThn0rxv7M&list=PLm_Qt4aKpfKijgP0rDH7FSJOlS9IBGbT1)
-- [How to Create a Beautiful Jekyll Blog?](https://blog.webjeda.com/create-jekyll-blog/)
-- [LeNPaul/Lagrange Jekyll theme](https://github.com/LeNPaul/Lagrange)
+- [GitHub Pages and Jekyll playlist of Bill Raymond](https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq){:target="_blank"}
+- [How to Start a Blog or Personal Website Using Jekyll and GitHub Pages](https://hungryminds.ca/how-to-start-a-blog-or-personal-website-using-jekyll-and-github-pages/){:target="_blank"}
+- [Github Pages and Jekyll Tutorial playlist of WebJeda](https://www.youtube.com/watch?v=bwThn0rxv7M&list=PLm_Qt4aKpfKijgP0rDH7FSJOlS9IBGbT1){:target="_blank"}
+- [How to Create a Beautiful Jekyll Blog?](https://blog.webjeda.com/create-jekyll-blog/){:target="_blank"}
+- [LeNPaul/Lagrange Jekyll theme](https://github.com/LeNPaul/Lagrange){:target="_blank"}
 
 ![pi_day](/assets/img/2021-03-14-pi-day.png "Happy Pi Day")

@@ -82,5 +82,5 @@ path("", include("frontend.urls"))
  - it is quite common not to work with the index.js file but to create an app.js component (do everything there) and render it into the index.js file
 
 **Links**:
-- [Full Stack Web App With Python & JavaScript from Tech With Tim](https://www.youtube.com/watch?v=JD-age0BPVo&list=PLzMcBGfZo4-kCLWnGmK0jUBmGLaJxvi4j)
-- [GitHub repo of the App presented by Tech With Tim](https://github.com/techwithtim/Music-Controller-Web-App-Tutorial)
+- [Full Stack Web App With Python & JavaScript from Tech With Tim](https://www.youtube.com/watch?v=JD-age0BPVo&list=PLzMcBGfZo4-kCLWnGmK0jUBmGLaJxvi4j){:target="_blank"}
+- [GitHub repo of the App presented by Tech With Tim](https://github.com/techwithtim/Music-Controller-Web-App-Tutorial){:target="_blank"}

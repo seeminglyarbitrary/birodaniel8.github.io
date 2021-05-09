@@ -10,7 +10,7 @@ toc: true
 ---
 
 Today's post is going to be a quite short one but an important feature has been added to the game, namely some barriers to restricting the movement of the playable character.
-First of all, I have created a proper map, a new background for the game. I have used a [map creator app](http://heroescommunity.com/viewthread.php3?TID=43775), which is used to create maps for Heroes III (one of the favorite games of my childhood) and now the player is on an island. In the final version, the player is deployed on one part of the island and has to find a king without being noticed by the guards, similar to the classic AC games.
+First of all, I have created a proper map, a new background for the game. I have used a [map creator app](http://heroescommunity.com/viewthread.php3?TID=43775){:target="_blank"}, which is used to create maps for Heroes III (one of the favorite games of my childhood) and now the player is on an island. In the final version, the player is deployed on one part of the island and has to find a king without being noticed by the guards, similar to the classic AC games.
 
 ### Player class and the run feature
 In the previous post, I have created a class `Character` and included the method which moves our player. I have realized that only the playable character can be moved by the user, so I have redefined the Character class just to have the basic properties and inherited a `Player` class that now contains the `move` method. For the inclusion of the obstacles I will need a rectangle object associated with the player object, therefore I added a `Rect` object to the Character class properties too:
@@ -46,7 +46,7 @@ if event.type == pygame.KEYUP:
 
 Now we want to restrict the possible moving territory of the player, namely I don't want the character to be able to run out of the island into the water. I have also added some walls to the map as obstacles and bridges between the two parts but obviously, I want to let the player go through the latter one. Adding the obstacles involves creating some `Rect` objects which define the restricted places and every time we move the code should check whether we want to enter these territories. If the next movement doesn't overlap with any of these rectangles then the player can move. 
 
-Fortunately, the Pygame's [Rect](https://www.pygame.org/docs/ref/rect.html) object is prepared to solve such problems with its `colliderect` method which returns a boolean on whether the two Rect objects overlap or not. We also came prepared by creating a Rect object for the player object, therefore the change we have to make is to check within the `move` method whether the new position of the player's Rect object does collide with any of the obstacle objects. If it doesn't then make the move but if it does then just keep the player standing at the previous position:
+Fortunately, the Pygame's [Rect](https://www.pygame.org/docs/ref/rect.html){:target="_blank"} object is prepared to solve such problems with its `colliderect` method which returns a boolean on whether the two Rect objects overlap or not. We also came prepared by creating a Rect object for the player object, therefore the change we have to make is to check within the `move` method whether the new position of the player's Rect object does collide with any of the obstacle objects. If it doesn't then make the move but if it does then just keep the player standing at the previous position:
 
 {% highlight python %}
 
@@ -79,8 +79,8 @@ As far as I know, these rectangle objects as their name suggest can only cover r
 
 ![map](/assets/img/2021-04-08-map.png "Map")
 
-The complete code is available at my git repo here: [main_part_iii.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_iii.py)
+The complete code is available at my git repo here: [main_part_iii.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_iii.py){:target="_blank"}
 
 ### Useful resources:
-- [Pygame's Rect object documentation](https://www.pygame.org/docs/ref/rect.html)
-- [Heroes of Might and Magic 3: Map Editor](http://heroescommunity.com/viewthread.php3?TID=43775)
+- [Pygame's Rect object documentation](https://www.pygame.org/docs/ref/rect.html){:target="_blank"}
+- [Heroes of Might and Magic 3: Map Editor](http://heroescommunity.com/viewthread.php3?TID=43775){:target="_blank"}

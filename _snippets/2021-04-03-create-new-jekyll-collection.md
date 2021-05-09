@@ -40,5 +40,5 @@ title: Collection List
 5. Create a new folder `_collection_name` and add new posts to it
 
 **Links**:
-- [Multiply post types in Jekyll](https://www.csrhymes.com/development/2017/10/27/multiple-post-types-in-jekyll.html)
-- [Introduction to collection in Jekyll](https://www.digitalocean.com/community/tutorials/jekyll-collections)
+- [Multiply post types in Jekyll](https://www.csrhymes.com/development/2017/10/27/multiple-post-types-in-jekyll.html){:target="_blank"}
+- [Introduction to collection in Jekyll](https://www.digitalocean.com/community/tutorials/jekyll-collections){:target="_blank"}

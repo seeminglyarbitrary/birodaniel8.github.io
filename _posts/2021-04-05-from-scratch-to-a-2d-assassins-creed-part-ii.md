@@ -32,7 +32,7 @@ def move(self, keys_pressed):
         self.rotation -= self.rotation_speed
     ...
 {% endhighlight %}
-where `key_pressed` is the returned value from `pygame.key.get_pressed()`. Now we can just rotate the image with the `pygame.transform.rotate` function, however this function doesn't rotate the [image around its center](https://stackoverflow.com/questions/4183208/how-do-i-rotate-an-image-around-its-center-using-pygame), hence makes the rotation quite strange. But I have managed to find a nice and handy function which rotates the images around their center and I have also created a function which wraps the reshaping and rotation steps:
+where `key_pressed` is the returned value from `pygame.key.get_pressed()`. Now we can just rotate the image with the `pygame.transform.rotate` function, however this function doesn't rotate the [image around its center](https://stackoverflow.com/questions/4183208/how-do-i-rotate-an-image-around-its-center-using-pygame){:target="_blank"}, hence makes the rotation quite strange. But I have managed to find a nice and handy function which rotates the images around their center and I have also created a function which wraps the reshaping and rotation steps:
 
 {% highlight python %}
 def rotate_around_center(image, angle):
@@ -128,8 +128,8 @@ This small adjustment makes very little difference but one can adjust the smooth
 
 That's it for this post. Oh, and I added a cool GTA like background (`WIN.blit(BACKGROUND, (0, 0))`) to the game. Next time I will add some obstacles to the map to make sure the player cannot just walk anywhere on the screen.
 
-The complete code is available at my git repo here: [main_part_ii.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_ii.py)
+The complete code is available at my git repo here: [main_part_ii.py](https://github.com/birodaniel8/assassins_creed_2d_game/blob/main/to_blog/main_part_ii.py){:target="_blank"}
 
 ### Useful resources:
-- [How do I rotate an image around its center using Pygame?](https://stackoverflow.com/questions/4183208/how-do-i-rotate-an-image-around-its-center-using-pygame) 
-- [Walking movement viewed from above](https://www.drawinghowtodraw.com/stepbystepdrawinglessons/wp-content/uploads/2016/05/howtodraw-figure-people-running-08.jpg) 
+- [How do I rotate an image around its center using Pygame?](https://stackoverflow.com/questions/4183208/how-do-i-rotate-an-image-around-its-center-using-pygame){:target="_blank"}
+- [Walking movement viewed from above](https://www.drawinghowtodraw.com/stepbystepdrawinglessons/wp-content/uploads/2016/05/howtodraw-figure-people-running-08.jpg){:target="_blank"}

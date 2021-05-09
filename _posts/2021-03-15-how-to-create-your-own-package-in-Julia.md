@@ -27,15 +27,15 @@ I always try to keep an open eye on exciting programming languages and when I he
 Tips and tricks, and some additional info:
 - By default, the package contains an `src` folder that will have all your implemented codes
 - The `Project.toml` and `Manifest.toml` files are responsible for handling the added external packages
-- You can create [unit test](https://docs.julialang.org/en/v1/stdlib/Test/) for your package and store them in `test/runtests.jl`. Running the tests is very easy, type `]` and run `test YourPackageName`
+- You can create [unit test](https://docs.julialang.org/en/v1/stdlib/Test/){:target="_blank"} for your package and store them in `test/runtests.jl`. Running the tests is very easy, type `]` and run `test YourPackageName`
 - Julia recommends the UpperCamelCase formatting for package names
 - You have to activate your package every time you launch a Julia session before importing, otherwise:<br>
 ![import_error](/assets/img/2021-03-15-import-error.png "Import Error")
 - Add the Revise package to your project (`]` and `add Revise`). It is a very useful package during the development of your project. Before importing your package, load Revise `using Revise`. If you make changes to your code it will automatically use the updated version and you don't have to reload Julia
-- You can also [include](https://docs.julialang.org/en/v1/manual/code-loading/) your package by `include("path_to_package\\YourPackageName\\src\\YourPackageName.jl")` and use it with `using .YourPackageName`
-- Finally, your package can be deployed to the [General registry](https://github.com/JuliaRegistries/Registrator.jl?installation_id=13503700&setup_action=install#how-to-use) and everyone can add it as any other Julia package
+- You can also [include](https://docs.julialang.org/en/v1/manual/code-loading/){:target="_blank"} your package by `include("path_to_package\\YourPackageName\\src\\YourPackageName.jl")` and use it with `using .YourPackageName`
+- Finally, your package can be deployed to the [General registry](https://github.com/JuliaRegistries/Registrator.jl?installation_id=13503700&setup_action=install#how-to-use){:target="_blank"} and everyone can add it as any other Julia package
 
 ### Useful resources:
-- [Pkg.jl](https://julialang.github.io/Pkg.jl/v1/creating-packages/)
-- [Developing your Julia package](https://medium.com/coffee-in-a-klein-bottle/developing-your-julia-package-682c1d309507)
-- [How to start creating packages for Julia with Revise.jl](https://thibaut-deveraux.medium.com/how-to-start-creating-packages-for-julia-with-revise-jl-bdb47fd4ca5a)
+- [Pkg.jl](https://julialang.github.io/Pkg.jl/v1/creating-packages/){:target="_blank"}
+- [Developing your Julia package](https://medium.com/coffee-in-a-klein-bottle/developing-your-julia-package-682c1d309507){:target="_blank"}
+- [How to start creating packages for Julia with Revise.jl](https://thibaut-deveraux.medium.com/how-to-start-creating-packages-for-julia-with-revise-jl-bdb47fd4ca5a){:target="_blank"}
