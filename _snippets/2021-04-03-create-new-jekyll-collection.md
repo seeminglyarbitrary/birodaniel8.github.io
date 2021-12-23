@@ -8,10 +8,10 @@ date: 2021-04-03
 
 Creating a new Jekyll collection for "multiple-feeds" (not added to RSS feed):
 1. Add a new collection to the `_config.yml` file: 
-``` python
+```python
 collections:
-        collection_name:
-            output: true  # new pages for each posts
+      collection_name:
+         output: true  # new pages for each posts
 ```
 2. Create a new layout `_layouts/collection_name.html`
 3. If you have a menu, add this item:

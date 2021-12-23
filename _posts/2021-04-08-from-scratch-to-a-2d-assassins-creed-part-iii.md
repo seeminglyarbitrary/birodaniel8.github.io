@@ -15,7 +15,7 @@ First of all, I have created a proper map, a new background for the game. I have
 ### Player class and the run feature
 In the previous post, I have created a class `Character` and included the method which moves our player. I have realized that only the playable character can be moved by the user, so I have redefined the Character class just to have the basic properties and inherited a `Player` class that now contains the `move` method. For the inclusion of the obstacles I will need a rectangle object associated with the player object, therefore I added a `Rect` object to the Character class properties too:
 
-{% highlight python %}
+```python
 class Character:
     def __init__(self, ...some_args_here...):
         ...
@@ -24,12 +24,11 @@ class Character:
 class Player(Character):
     def move(self, keys_pressed):
         ...
-{% endhighlight %}
+```
 
 In the game, I also want to allow the player to move faster if the user wants that as a classic running feature. This can be achieved very easily by adding a new key up/down event (on LeftShift) which changes the player's speed attribute.
 
-{% highlight python %}
-
+```python
 if event.type == pygame.KEYDOWN:
     ...
     if event.key == pygame.K_LSHIFT:
@@ -39,8 +38,7 @@ if event.type == pygame.KEYUP:
     ...
     if event.key == pygame.K_LSHIFT:
         player.speed /= 2  # stop running
-
-{% endhighlight %}
+```
 
 ### Obstacle objects
 
@@ -48,8 +46,7 @@ Now we want to restrict the possible moving territory of the player, namely I do
 
 Fortunately, the Pygame's [Rect](https://www.pygame.org/docs/ref/rect.html){:target="_blank"} object is prepared to solve such problems with its `colliderect` method which returns a boolean on whether the two Rect objects overlap or not. We also came prepared by creating a Rect object for the player object, therefore the change we have to make is to check within the `move` method whether the new position of the player's Rect object does collide with any of the obstacle objects. If it doesn't then make the move but if it does then just keep the player standing at the previous position:
 
-{% highlight python %}
-
+```python
 OBSTACLES = [
     ...
     pygame.Rect(644, 430, 49, 237),
@@ -62,7 +59,8 @@ x_delta = -np.sin(self.rotation * np.pi / 180) * self.speed
 y_delta = -np.cos(self.rotation * np.pi / 180) * self.speed
 
 # create a temporary rectangle with the new positions and check if the move is valid:
-temp_rect = pygame.Rect(self.rect.x+x_delta, self.rect.y+y_delta, self.size, self.size)
+temp_rect = pygame.Rect(self.rect.x + x_delta, self.rect.y + y_delta,
+                        self.size, self.size)
 num_collides = np.sum([temp_rect.colliderect(obstacle) for obstacle in OBSTACLES])
 # if valid then move, else just stand at that point:
 if num_collides == 0:
@@ -73,7 +71,7 @@ if num_collides == 0:
     self.walk_last_time = pygame.time.get_ticks()
 else:
     self.pic = PLAYER_STAND
-{% endhighlight %}
+```
 
 As far as I know, these rectangle objects as their name suggest can only cover rectangles on the map. Therefore, if you have a complicated map you have to add these rectangles one by one figuring out their size and position. It can be a painful process, but along with these small but important changes we already have a quite neat "game" where we can walk and run around an island without falling into the water.
 

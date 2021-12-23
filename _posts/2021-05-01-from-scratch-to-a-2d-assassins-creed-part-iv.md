@@ -16,59 +16,63 @@ In this post, I am going to add the guards to the game and also getting super ge
 First, let's just add the bushes and the hiding functionality as it is quite similar to the behavior of the walls from the last post with some minor changes. 
 
 After loading the bush image, we create a new Bush class and a Rect object corresponding to the bush instance. Let's also place 10 bushes on the map at a random position in the given area:
-{% highlight python %}
+```python
 BUSH = pygame.image.load(os.path.join("Assets", "bush.png"))
 ...
 class Bush:
     def __init__(self, picture, x, y, size):
-        self.picture, self.x, self.y, self.size = \
-            picture, x, y, size
+        self.picture, self.x, self.y, self.size = picture, x, y, size
         # the bush rectangle is a third of the bush size to make the hiding more realistic:
-        self.rect = pygame.Rect(self.x+self.size/3, self.y+self.size/3, self.size/3, self.size/3)
+        self.rect = pygame.Rect(self.x + self.size/3,
+                                self.y + self.size/3,
+                                self.size/3,
+                                self.size/3)
 ...
 def main():
     bushes = [Bush(BUSH, 
-                   np.random.randint(375, 400), 
-                   np.random.randint(200, 450), 50) for i in range(10)]
-{% endhighlight %}
+              np.random.randint(375, 400), 
+              np.random.randint(200, 450), 50) for i in range(10)]
+```
 
 Obviously, these won't appear right away because we have to draw them to the screen within our `draw_window` function, but make sure you add this segment after the drawing of the player. This way the player will hide under these bush objects:
 
-{% highlight python %}
+```python
 def draw_window(player, ... bushes):
     ...
     for bush in bushes:
-        WIN.blit(reshape_and_rotate(bush.picture, bush.size, 0), (bush.x, bush.y))
-{% endhighlight %}
+        WIN.blit(reshape_and_rotate(bush.picture, bush.size, 0),
+                 (bush.x, bush.y))
+```
 
 The purpose of the bushes is to let the player hide, so I create a `hiding` attribute to the Player class and whenever the player collides with any of the bushes' rectangle object, we set this variable to `true` (similar behavior to colliding with the walls):
 
-{% highlight python %}
+```python
 player.hiding = True if np.sum([player.rect.colliderect(bush.rect) for bush in bushes]) > 0 else False
-{% endhighlight %}
+```
 
 By testing this functionality, I have noticed that is it hard to keep up with the player's direction and movement if it moves under the bushes, therefore I have added a little arrow when the player is hiding and the arrow's rotation coincides with the player's direction (-90 degree rotation is needed because the base images have different rotation):
 
-{% highlight python %}
+```python
 if player.hiding:
-        WIN.blit(reshape_and_rotate(ARROW, 35, player.rotation-90), (player.x, player.y))
-{% endhighlight %}
+    WIN.blit(reshape_and_rotate(ARROW, 35, player.rotation-90), 
+              (player.x, player.y))
+```
 
 ### Guards
 
 ![guards](/assets/img/2021-05-01-guards.png "Guards")
 
 Adding the guards to the game holds more interesting features to discuss. The first step is to load the images similar to the player's movement (but different color):
-{% highlight python %}
+```python
 GUARD_RIGHT = pygame.image.load(os.path.join("Assets", "guard_right.png"))
 GUARD_LEFT = pygame.image.load(os.path.join("Assets", "guard_left.png"))
 GUARD_STAND = pygame.image.load(os.path.join("Assets", "guard_stand.png"))
 VIEW_RANGE = pygame.image.load(os.path.join("Assets", "view_range.png"))
-{% endhighlight %}
+```
 
 The last item is a "view range", which is just a colored slightly transparent circle sector (covering 160 degrees). This component will show much the guard can see. In the final game, I will have 2 types of guards: standing (no movement) and walking. But in this post, I will only focus on the standing guard to add the base functionalities, because the walking of the guard is again not a trivial task. For this I created a general `Guard` class and one child class for the standing guard:
 
-{% highlight python %}
+```python
 class Guard(Character):
     """Guard class"""
     def __init__(self, pic, name, x, y, rotation, size):
@@ -79,11 +83,11 @@ class Guard(Character):
 
 class GuardStanding(Guard):
     """Standing guard class"""
-{% endhighlight %}
+```
 
 Note that I have already attached the position of the view range to the general guard object in a way that the center of the view range is the same as the center of the guard's rectangle object. Now I just have to add a guard to the screen the usual way:
 
-{% highlight python %}
+```python
 def main():
     ...
     guards = [GuardStanding(GUARD_STAND, name="Guard_1", x=1075, y=570, rotation=90, size=35)]
@@ -91,10 +95,11 @@ def main():
 def draw_window(player, guards, bushes):
     ...
     for guard in guards:
-        WIN.blit(reshape_and_rotate(guard.pic, guard.size, guard.rotation), (guard.x, guard.y))
+        WIN.blit(reshape_and_rotate(guard.pic, guard.size, guard.rotation), 
+                 (guard.x, guard.y))
         WIN.blit(reshape_and_rotate(VIEW_RANGE, guard.size * guard.view_range_scale, guard.rotation-180),
-                (guard.view_range_x, guard.view_range_y))
-{% endhighlight %}
+                 (guard.view_range_x, guard.view_range_y))
+```
 
 Similar to the player's hiding arrow, the rotation of the view range is attached to the rotation of the guard.
 
@@ -114,7 +119,7 @@ $$ c^2 = a^2 + b^2 - 2ab cos \gamma $$
 
 where $c = \vec{AB}$, $a = \vec{BC}$ and $b = \vec{AC}$. The following function does exactly this on determining the distance and angle between two objects and given the properties of NumPy's `arccos` function, the angle starts at 0 and goes to 180 both clockwise and anti-clockwise:
 
-{% highlight python %}
+```python
 def get_distance_and_angle(obj1, obj2):
     """Get the distance and the angle between two objects with a rectangle in their attributes using cosine law"""
     # applying cosine law:
@@ -131,20 +136,20 @@ def get_distance_and_angle(obj1, obj2):
     angle = np.arccos((distance_bc**2 + distance_ac**2 - distance_ab**2) /
                       (2 * distance_bc * distance_ac)) * 180 / np.pi
     return distance_ac, angle
-{% endhighlight %}
+```
 
 ### Guard alerts as user-defined events
 Now that we know how to check whether the player runs into the view range, we need some event to be triggered when this happens. Pygame has many built-in events and event listeners but the users can also define their own events. These can be particularly useful when we are in a given function or method, but we want to change a property/variable, not in scope (for example at the tutorial video I watched, when a bullet hits a spaceship, the player's remaining lives must be decreased, but that variable is not passed to the function that checks whether the spaceship was hit).
 
 Adding a user-defined event is very easy, we just have to create a variable to use a given identifier to this user-defined event. In my case this event corresponds to the guard's alerts when the player runs into the view range:
 
-{% highlight python %}
+```python
 GUARD_ALERT = pygame.USEREVENT + 1  # these numbers are just identifiers
-{% endhighlight %}
+```
 
 Once that is created, we can add functionality when this event happens (wait 3 sec and close the game):
 
-{% highlight python %}
+```python
 def main():
     while run:
         for event in pygame.event.get():
@@ -152,12 +157,12 @@ def main():
             if event.type == GUARD_ALERT:
                 pygame.time.delay(3000)  # wait 3 sec
                 run = False
-{% endhighlight %}
+```
 
 ### Triggering the alert event
 There is nothing more left to do but to actually check whether the player has run into the view range and if so, trigger the above-created user event. For this, I have placed a function inside the while loop which checks this for all guards in the map and triggers the event if the player is not hiding. For this we have to `post` an `Event` with the specified user-defined identifier:
 
-{% highlight python %}
+```python
 def guard_alerts(player, guards):
     for guard in guards:
         distance, angle = get_distance_and_angle(player, guard)
@@ -168,7 +173,7 @@ def main():
     while run:
         ...
         guard_alerts(player, guards)
-{% endhighlight %}
+```
 
 Now if the player runs into the highlighted view range, the game stops and closes after 3 seconds.
 

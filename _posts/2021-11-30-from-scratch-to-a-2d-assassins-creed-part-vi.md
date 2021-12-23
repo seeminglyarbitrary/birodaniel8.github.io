@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "From scratch to a 2D Assassin's Creed game: Part V"
+title: "From scratch to a 2D Assassin's Creed game: Part VI"
 author: "Daniel Biro"
 categories: pygame
 tags: [python, pygame, games, assassins creed]
-image: 2021-06-06-header-pygame-v.png
-date: 2021-06-06
+image: 2021-11-30-header-pygame-v.png
+date: 2021-11-30
 toc: true
 ---
 

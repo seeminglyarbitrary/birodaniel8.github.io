@@ -65,7 +65,8 @@ Creating a new blog post is very easy in the Jekyll framework and it can be basi
 When you created your site with Jekyll a lot of files has been generated. We have seen that the `_posts` folder contains all your blog posts in markdown files and the `_config.yml` file contains some basic variable settings for your site. These can be cited by `site.variable_name` in the html files later on. But there are some other interesting files/folders created:
 
 - **Gemfile**: The gemfile contains some Ruby-based apps which responsible to run your site and also lists some plug-ins you might use (such as the RSS feed plug-in). When you run the bundle installer, the gems are installed from this file, however, using some non-default themes I faced problems using different gems listed here. It recommends you to comment and uncomment certain lines if you use GitHub Pages (see the comments within the file), which resulted in some failures to publish my site online. My final solution is to have `source "https://rubygems.org"` and the plug-ins to be installed in my gemfile:
-{% highlight ruby %}
+
+``` ruby
 source "https://rubygems.org"
 
 # If you have any plugins, put them here!
@@ -78,7 +79,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jekyll-paginate'
 gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
-{% endhighlight %}
+```
+
 - **_site folder**: Whenever you make a change in your files, Jekyll regenerates the html files for your whole site and stores them in the `_site` folder. You can check how your simple blog post markdown files have been converted to proper static html pages.
 - **index.markdown**: This is the home page that will open up. Looking into the file you can see its content is quite short. The code basically says Jekyll to include the `home` html file from the `layout` folder from the Minima theme (more on this later).
 
@@ -100,12 +102,11 @@ Although GitHub Pages has its supported themes, Jekyll has a huge library of the
 
 The applied Jekyll theme probably has more files and folders than what the simple new project created. The exact folders you see depends on the selected theme, however there are some quite common ones:
 - **_layouts** folder: All theme contains a `_layout` where you can customize the structure of your blog. The aforementioned `home.html` file is also here. If you open up one of the html files, you might see some code which is not basic html, like this:
-
-{% highlight html %}
-  {% raw %}{% if paginator.next_page %}
+``` html
+{% raw %}{% if paginator.next_page %}
     <a href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% endif %}   {% endraw %}
-{% endhighlight %}
+{% endif %}{% endraw %}
+```
 
 Jekyll supports the [Liquid](https://shopify.github.io/liquid/){:target="_blank"} template language which can be useful to include `if-else` or `for-loop` type statements.
 - **_includes** folder: This folder contains some shorter html files (header, footer, menu) that can be included to pages easily by a simple line eg.: {% raw %}`{% include header.html %}`{% endraw %}

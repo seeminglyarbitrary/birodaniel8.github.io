@@ -13,28 +13,28 @@ In this second part of creating a fully functioning AC-type game, I will describ
 In the previous post, the playable character has been created and we have changed its position by pressing key `w`. Now we want to allow it to change direction and at the end, we will add some animations to the movement.
 As a first step I have created a `Character` class as later on I will have additional non-playable characters like guards and I have also added the `move` method which will handle the movement of the player.
 
-{% highlight python %}
+```python
 class Character:
     def __init__(self, ...some_args_here...):
         ...
 
     def move(self, keys_pressed):
         ...
-{% endhighlight %}
+```
 
 ### Rotation
 Changing the rotation parameter of the character is quite simple and very similar to the forward movement. When the key `a` or `d` is pressed, we change the rotation attribute of the character by a certain amount (`rotation_speed` controls how much the rotation is changed). One thing to bear in mind is that the rotation goes anti-clockwise and the 0 degree is at 12 o'clock:
-{% highlight python %}
+```python
 def move(self, keys_pressed):
     if keys_pressed[pygame.K_a]:
         self.rotation += self.rotation_speed
     if keys_pressed[pygame.K_d]:
         self.rotation -= self.rotation_speed
     ...
-{% endhighlight %}
+```
 where `key_pressed` is the returned value from `pygame.key.get_pressed()`. Now we can just rotate the image with the `pygame.transform.rotate` function, however this function doesn't rotate the [image around its center](https://stackoverflow.com/questions/4183208/how-do-i-rotate-an-image-around-its-center-using-pygame){:target="_blank"}, hence makes the rotation quite strange. But I have managed to find a nice and handy function which rotates the images around their center and I have also created a function which wraps the reshaping and rotation steps:
 
-{% highlight python %}
+```python
 def rotate_around_center(image, angle):
     rotation_rect = image.get_rect().copy()
     rotation_image = pygame.transform.rotate(image, angle)
@@ -45,7 +45,7 @@ def rotate_around_center(image, angle):
 def reshape_and_rotate(img, size, rotation):
     return rotate_around_center(
         pygame.transform.scale(img, (size, size)), rotation)
-{% endhighlight %}
+```
 
 ### Moving forward in different angles
 
@@ -54,13 +54,13 @@ The forward movement of the player is quite straightforward if the angle can be 
 ![sin_cos](/assets/img/2021-04-05-cos-sin.png "Sine-Cosine movement")
 
 First, we have to rotate the coordinate system by 90 degrees anti-clockwise as the 0 degrees in pygame is at 12 o'clock. Second, we need to look at the right-bottom corner as the increments of x and y correspond to these directions in pygame. Finally, we have to convert the angle to radians ($rad = deg \times \pi / 180$) and multiply the coordinate changes by the speed of the movement:
-{% highlight python %}
+```python
 def move(self, keys_pressed):
     ...
     self.x -= np.sin(self.rotation * np.pi / 180) * self.speed  
     self.y -= np.cos(self.rotation * np.pi / 180) * self.speed
     ...
-{% endhighlight %}
+```
 
 ### Animation
 
@@ -70,7 +70,7 @@ To make the movement of the walking player complete I have also added some anima
 
 However, we cannot just switch between these images in each iteration because then the game would update these images 60 times in a second (FPS). And I also wanted to switch back to the standing image when the movement is over. This latter is quite easy I only had to add a new event to the event loop in main():
 
-{% highlight python %}
+```python
 while run:
     ...
     for event in pygame.event.get():
@@ -79,13 +79,13 @@ while run:
             if event.key == pygame.K_w:
                 character_0.pic = WALKING_STAND
         ...
-{% endhighlight %}
+```
 
 These few lines will change the `pic` attribute of the `character_0` object (player object) to the standing top-view image if the key `w` has been released (keyup event).
 
 The more interesting part is the actual animation during the walk: the idea is to start measuring the time from the start of the movement (keydown event on `w`) and update the images at some given frequency. This frequency can be tied to the character's speed to make the animation more realistic. I also want the animation and the appearance of the images to be periodic, therefore I applied the modulo(4) operator on the passed time to get a 4 element cycle (right leg forward - stand - left leg forward - stand):
 
-{% highlight python %}
+```python
 while run:
     ...
     for event in pygame.event.get():
@@ -94,9 +94,9 @@ while run:
             if event.key == pygame.K_w:
                 character_0.walk_start_time = pygame.time.get_ticks()
         ...
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 def move(self):
     ...
     if keys_pressed[pygame.K_w]:
@@ -110,11 +110,11 @@ def move(self):
         else:
             self.pic = WALKING_LEFT
     ...
-{% endhighlight %}
+```
 
 Although I only had 3 different images to animate the movement, this is now working just fine. But one last thing I have added to my code is to make the walking a bit less smooth. With the current implementation, it sometimes looks as if the player is sliding on the screen. To make the location change a bit less smooth I only update the location of the player if a certain time has passed:
 
-{% highlight python %}
+```python
 def move(self):
     ...
     if (pygame.time.get_ticks() - self.walk_last_time > (FPS * 0.6)):
@@ -122,7 +122,7 @@ def move(self):
         self.y -= np.cos(self.rotation * np.pi / 180) * self.speed
         self.walk_last_time = pygame.time.get_ticks()
     ...
-{% endhighlight %}
+```
 
 This small adjustment makes very little difference but one can adjust the smoothness changing the 0.6 parameter to something else.
 
