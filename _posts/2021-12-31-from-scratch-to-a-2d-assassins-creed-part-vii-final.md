@@ -115,3 +115,6 @@ All this is fun, but I still want to be able to share this game with a friend wh
 Thank you for reading through this series of posts and I wish you a Happy New Year!
 
 ![newyear](/assets/img/2021-12-31-new-year.png "NewYear")
+
+### Useful resources:
+- [Making an Executable from a Pygame Game (PyInstaller)](https://www.youtube.com/watch?v=lTxaran0Cig){:target="_blank"}
